@@ -1,0 +1,20 @@
+name: Deployment DEV
+
+on:
+  workflow_run:
+    workflows: ["Continuous Integration"]
+    types:
+      - completed
+    branches: [main]
+  push:
+    branches: [development]
+
+jobs:
+
+  deployment:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate Deployment
+      - run: echo "This is a fake deployment"
+    
